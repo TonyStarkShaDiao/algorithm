@@ -1,6 +1,7 @@
 package com.src.algorithm.datastructure.anarrayof.test;
 
 import com.src.algorithm.datastructure.anarrayof.prod.TradingStockBestTime;
+import com.src.algorithm.datastructure.anarrayof.prod.WritingRemoveDuplicates;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -30,7 +31,7 @@ class TradingStockBestTimeTest {
     @DisplayName("排序获取两个数组元素的交集(元素可重复)")
     @ParameterizedTest
     @CsvSource("7;1;5;3;6;4")
-    void mySelf_DynamicProgrammingTradingStockBestTime(@ConvertWith(StringArrayConverterConfig.class)int [] stockTradingArray) {
+    void mySelf_DynamicProgrammingTradingStockBestTime(@ConvertWith(WritingRemoveDuplicatesTest.class)int [] stockTradingArray) {
         int maxEarnings = tradingStockBestTime.mySelf_DynamicProgrammingTradingStockBestTime(stockTradingArray);
         assertEquals(maxEarnings, 5, "期望的价格收益是5元");
 
