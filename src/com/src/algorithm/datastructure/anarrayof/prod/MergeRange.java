@@ -12,11 +12,12 @@ import java.util.List;
  * @date 2022/04/05
  */
 public class MergeRange {
+
     public int[][] myself_forFirstTime_merge(int[][] needIntervalArray) {
         intervalArraySort(needIntervalArray);
         List<int[]> intervalCollect = new ArrayList<>();
-        for (int i = 0; i < needIntervalArray.length; i++) {
-            int[] currentIntervalArray = needIntervalArray[i];
+        for (int needIntervalArrayIndex = 0; needIntervalArrayIndex < needIntervalArray.length; needIntervalArrayIndex++) {
+            int[] currentIntervalArray = needIntervalArray[needIntervalArrayIndex];
             if (intervalCollect.isEmpty()) {
                 intervalCollect.add(currentIntervalArray);
             }
