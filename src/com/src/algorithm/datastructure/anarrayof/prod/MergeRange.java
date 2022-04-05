@@ -13,6 +13,12 @@ import java.util.List;
  */
 public class MergeRange {
 
+    /**
+     * 我自己的第一次合并区间
+     *
+     * @param needIntervalArray 需要间隔数组
+     * @return {@code int[][]}
+     */
     public int[][] myself_forFirstTime_merge(int[][] needIntervalArray) {
         intervalArraySort(needIntervalArray);
         List<int[]> intervalCollect = new ArrayList<>();
@@ -35,6 +41,13 @@ public class MergeRange {
         }
         return intervalCollect.toArray(new int[intervalCollect.size()][]);
     }
+
+    /**
+     * 我自己的第二次合并区间
+     *
+     * @param needIntervalArray 需要合并的数组
+     * @return {@code int[][]}
+     */
     public int[][] myself_secondTime_merge(int[][] needIntervalArray) {
         this.intervalArraySort(needIntervalArray);
         List<int[]> mergeIntervalCollect = new ArrayList<>();

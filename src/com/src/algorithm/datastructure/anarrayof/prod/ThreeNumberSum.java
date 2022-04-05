@@ -57,7 +57,6 @@ public class ThreeNumberSum {
         int tailPoint = specifiedFindArray.length - 1;
         while (headPoint < tailPoint) {
             int sum = specifiedFindArray[tailPoint] + specifiedFindArray[headPoint];
-            boolean flag = sum == expectedValue;
             if (sum == expectedValue) {
                 arrayElementCollect.add(Arrays.asList(-expectedValue, specifiedFindArray[headPoint], specifiedFindArray[tailPoint]));
                 while (headPoint < specifiedFindArray.length && specifiedFindArray[headPoint] == specifiedFindArray[++headPoint]) {
