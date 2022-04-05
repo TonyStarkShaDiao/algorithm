@@ -93,5 +93,10 @@ public class NewHashMap<K, V> {
             }
         }
     }
+    /**
+     * print logic
+     */
+    public void printLog(){}
+
 }
 
