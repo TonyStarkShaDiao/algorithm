@@ -14,7 +14,6 @@ public class SearchTwoDimensionalMatrixII {
         }
         int row = twoDimensionMatrix.length;
         int column = twoDimensionMatrix[0].length;
-
         int currentRow = 0;
         int currentColumn = column - 1;
         while (currentRow<row&&currentColumn>=0) {
