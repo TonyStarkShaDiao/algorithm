@@ -26,12 +26,6 @@ class PascalsTriangleGetCertainRowElementTest {
     void tearDown() {
     }
 
-
-    void pascalsTriangleGetCertainRowElement(int pascalsTriangleRowIndex) {
-
-    }
-
-
     @ParameterizedTest
     @DisplayName("Test for Pascal's Triangle")
     @CsvSource("3")
