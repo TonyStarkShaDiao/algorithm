@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProgressiveIncreaseTernarySubSequenceTest {
-
     public static final String THE_TERNARY_SUB_SEQUENCE_IS_NOT_EXIST = "The Ternary Sub Sequence is not exist";
     private ProgressiveIncreaseTernarySubSequence progressiveIncreaseTernarySubSequence;
     int [] existStayCheckTernarySubSequenceArray;
