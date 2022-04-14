@@ -35,6 +35,12 @@ public class PascalsTriangleGetCertainRowElement {
         return pascalsTriangleElementCollect;
     }
 
+    /**
+     * 我自己的反向帕斯卡三角形得到某些行元素
+     *
+     * @param pascalsTriangleRowIndex 帕斯卡三角行索引
+     * @return {@code List<Integer>}
+     */
     public List<Integer> Myself_ReversePascalsTriangleGetCertainRowElement(int pascalsTriangleRowIndex) {
         List<Integer> paiTriangleElementCollect = new ArrayList<>();
         paiTriangleElementCollect.add(1);
