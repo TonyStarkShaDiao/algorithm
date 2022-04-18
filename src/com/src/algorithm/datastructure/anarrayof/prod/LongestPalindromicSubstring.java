@@ -40,6 +40,7 @@ public class LongestPalindromicSubstring {
     /**
      * 是偶数吗
      *
+     *
      * @param collectingLettersOccurrence 收集信件
      * @return boolean
      */
