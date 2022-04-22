@@ -10,14 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class LongestPalindromicSubstringTest {
 
     private LongestPalindromicSubstring longestPalindromicSubstring;
-    private String needFindCharacterString;
-    private int expectMaximumPalindromeSubstringCount;
+    private String needAnalysisCharacterString;
 
+    private String expectedValue;
     @BeforeEach
     void setUp() {
         longestPalindromicSubstring = new LongestPalindromicSubstring();
-        needFindCharacterString = "abcdcba";
-        expectMaximumPalindromeSubstringCount = 7;
+        needAnalysisCharacterString = "aaccbb";
+        expectedValue = "aa";
     }
 
     @AfterEach
@@ -25,8 +25,14 @@ class LongestPalindromicSubstringTest {
     }
 
     @Test
-    void myself_LongestPalindromicSubstring() {
-        int result = longestPalindromicSubstring.myself_LongestPalindromicSubstring(needFindCharacterString);
-        assertEquals(expectMaximumPalindromeSubstringCount, result);
+    void mySelf_centralDiffusionLongestPalindromicSubstring() {
+        String needChecklongestPalindromicSubstring = longestPalindromicSubstring.mySelf_centralDiffusionLongestPalindromicSubstring(needAnalysisCharacterString);
+        assertEquals(expectedValue, needChecklongestPalindromicSubstring);
+    }
+
+    @Test
+    void mySelf_SecondCentralDiffusionLongestPalindromicSubstring() {
+        String needChecklongestPalindromicSubstring = longestPalindromicSubstring.mySelf_centralDiffusionLongestPalindromicSubstring(needAnalysisCharacterString);
+        assertEquals(expectedValue, needChecklongestPalindromicSubstring);
     }
 }
