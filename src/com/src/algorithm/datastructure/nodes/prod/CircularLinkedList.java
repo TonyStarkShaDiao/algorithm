@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 循环链表
+ * 环形链表
  *
  * @author Tony Stark (沙雕) 13860120508
  * @date 2022/02/16
@@ -12,13 +12,18 @@ import java.util.Set;
 
 public class CircularLinkedList {
 
- public static class ListNode {
-      public   int index;
-     public    ListNode next;
+    public static class ListNode {
+        public int value;
+        public ListNode next;
 
         public ListNode(int index) {
-            this.index = index;
+            this.value = index;
             next = null;
+        }
+
+        public ListNode(int val, ListNode next) {
+            this.value = val;
+            this.next = next;
         }
     }
 

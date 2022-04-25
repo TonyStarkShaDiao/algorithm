@@ -73,7 +73,6 @@ public class MergingTwoOrderNodeList {
         return firstOneListNode;
         }
 
-
     }
 
 }
