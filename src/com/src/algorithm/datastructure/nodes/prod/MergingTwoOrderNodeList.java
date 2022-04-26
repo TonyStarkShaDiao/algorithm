@@ -2,6 +2,7 @@ package com.src.algorithm.datastructure.nodes.prod;
 
 import java.awt.*;
 import java.io.File;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -28,6 +29,28 @@ public class MergingTwoOrderNodeList {
             this.value = val;
             this.next = next;
         }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == null) {
+                return false;
+            }
+            if (obj instanceof ListNode) {
+                ListNode node = (ListNode) obj;
+                ListNode tempListNode = new ListNode(value);
+                tempListNode.next = next;
+                while (node != null) {
+                    System.out.println(tempListNode.value);
+                    if (node.value != tempListNode.value) {
+                        return false;
+                    }
+                    node = node.next;
+                    tempListNode = tempListNode.next;
+                }
+            }
+            return true;
+        }
+
 
     }
 
@@ -66,13 +89,31 @@ public class MergingTwoOrderNodeList {
         } else if (secondListNode == null) {
             return firstOneListNode;
         } else if (firstOneListNode.value > secondListNode.value) {
-            secondListNode.next =mySelf_RecursiveNodeMergeTwoLists(firstOneListNode, secondListNode.next);
+            secondListNode.next = mySelf_RecursiveNodeMergeTwoLists(firstOneListNode, secondListNode.next);
             return secondListNode;
         } else {
-           firstOneListNode.next= mySelf_RecursiveNodeMergeTwoLists(firstOneListNode.next, secondListNode);
-        return firstOneListNode;
+            firstOneListNode.next = mySelf_RecursiveNodeMergeTwoLists(firstOneListNode.next, secondListNode);
+            return firstOneListNode;
         }
 
+    }
+
+    public ListNode mySelf_SecondTemporaryListNodeMergeTwoLists(ListNode firstOneListNode, ListNode secondListNode) {
+        ListNode temporary = new ListNode(-1);
+        ListNode temporaryNode = temporary;
+        while (firstOneListNode != null && secondListNode != null) {
+            if (firstOneListNode.value <= secondListNode.value) {
+                temporaryNode.next = firstOneListNode;
+                firstOneListNode = firstOneListNode.next;
+            } else {
+                temporaryNode.next = secondListNode;
+                secondListNode = secondListNode.next;
+            }
+            temporaryNode = temporaryNode.next;
+        }
+
+        temporary.next = firstOneListNode == null ? secondListNode : firstOneListNode;
+        return temporary.next;
     }
 
 }
