@@ -24,7 +24,7 @@ class BinaryTreeSawtoothLevelOrderTraversalTest {
         root.rightTreeNode = new BinaryTreeSawtoothLevelOrderTraversal.TreeNode(2);
         root.leftTreeNode.leftTreeNode = new BinaryTreeSawtoothLevelOrderTraversal.TreeNode(3);
         root.leftTreeNode.rightTreeNode = new BinaryTreeSawtoothLevelOrderTraversal.TreeNode(4);
-        root.rightTreeNode.leftTreeNode = new BinaryTreeSawtoothLevelOrderTraversal.TreeNode(5);
+        root.rightTreeNode.leftTreeNode = new ¬.TreeNode(5);
         root.rightTreeNode.rightTreeNode = new BinaryTreeSawtoothLevelOrderTraversal.TreeNode(6);
         expectedCollect = new ArrayList<>();
         expectedCollect.add(Arrays.asList(0));
