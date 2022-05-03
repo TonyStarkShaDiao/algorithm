@@ -1,0 +1,13 @@
+
+K
+java:S1191"5Use classes from the Java API instead of Sun classes.(ÙÅÔÏ
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¦Õß ûÿÿÿÿ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ËÍ„ıÿÿÿÿ
+b	java:S100$"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏöÙc
+h	java:S100-"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãÒ½şÿÿÿÿ
+h	java:S1003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªû¿Şüÿÿÿÿ
+c	java:S100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à‘ªß
+c	java:S100@"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºÎ¾ï
+Y
+java:S1128"<Remove this unused import 'com.sun.tools.javac.util.Assert'.(ÙÅÔÏ8ùÆç¥†0

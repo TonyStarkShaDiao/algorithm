@@ -10,7 +10,6 @@ import java.util.List;
  * @date 2022/04/18
  */
 public class DivideLetterInterval {
-
     public List<Integer> mySelf_DivideLetterInterval(String needAnalyticIntervalCharacterString) {
         List<Integer> eachCharacterStringSectionLengthCollect = new ArrayList<>();
         int[] characterLastIndexArray = new int[26];

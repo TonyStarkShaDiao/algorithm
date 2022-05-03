@@ -5,6 +5,9 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 class EffectiveBracketsTest {
     EffectiveBrackets effectiveBrackets;
@@ -23,7 +26,7 @@ class EffectiveBracketsTest {
     @DisplayName("判断有效括号的正确性")
     void myself_StackEffectiveBracketsSuccessTest(String validationOfString) {
         Boolean validationResult = effectiveBrackets.myself_StackEffectiveBrackets(validationOfString);
-        Assertions.assertTrue(validationResult,"匹配失败");
+        assertTrue(validationResult, "匹配失败");
     }
     @ParameterizedTest
     @ValueSource(strings = {"((","){"})
@@ -37,6 +40,7 @@ class EffectiveBracketsTest {
     @ValueSource(strings = {"()","" ,"({})","{([])}"})
     @DisplayName("判断有效括号的正确性")
     void myself_recursiveEffectiveBrackets(String validationOfString) {
-        effectiveBrackets.myself_recursiveEffectiveBrackets(validationOfString);
+        Boolean aBoolean = effectiveBrackets.myself_recursiveEffectiveBrackets(validationOfString);
+        assertFalse(aBoolean);
     }
 }

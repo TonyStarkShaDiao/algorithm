@@ -2,6 +2,7 @@ package com.src.algorithm.datastructure.tree.test.binarysearchtrees;
 
 import com.src.algorithm.datastructure.tree.prod.binarysearchtrees.BinarySearchTreeSearch;
 import com.src.algorithm.datastructure.tree.prod.binarysearchtrees.CheckBinarySearchTrees;
+import com.src.algorithm.datastructure.tree.prod.binarysearchtrees.OrderedArrayToBinarySearchTree;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
