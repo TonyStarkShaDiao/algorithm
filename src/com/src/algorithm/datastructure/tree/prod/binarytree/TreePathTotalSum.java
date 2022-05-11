@@ -1,15 +1,14 @@
 package com.src.algorithm.datastructure.tree.prod.binarytree;
 
 import javax.annotation.Resource;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * 树路径总和
  *
  * @author Tony Stark (沙雕) 13860120508
  * @date 2022/03/07
+ *
  */
 public class TreePathTotalSum {
     public static class TreeNode {
@@ -31,7 +30,7 @@ public class TreePathTotalSum {
         }
     }
 
-   public Boolean mySelf_DepthFirstSearchHasTreePathTotalSum(TreeNode treeNodeRoot, int treeNodePathSum) {
+    public Boolean mySelf_DepthFirstSearchHasTreePathTotalSum(TreeNode treeNodeRoot, int treeNodePathSum) {
         if (treeNodeRoot == null) {
             return false;
         }
@@ -54,36 +53,38 @@ public class TreePathTotalSum {
         return false;
     }
 
-   public Boolean mySelf_BreadthFirstSearchHasTreePathTotalSum(TreeNode treeNodeRoot, int treeNodePathSum) {
+    public Boolean mySelf_BreadthFirstSearchHasTreePathTotalSum(TreeNode treeNodeRoot, int treeNodePathSum) {
         if (treeNodeRoot == null) {
             return false;
         }
-        Deque<TreeNode> temporaryTreeNodeDeque =new LinkedList<>();
+        Deque<TreeNode> temporaryTreeNodeDeque = new LinkedList<>();
         temporaryTreeNodeDeque.add(treeNodeRoot);
         while (!temporaryTreeNodeDeque.isEmpty()) {
             TreeNode current = temporaryTreeNodeDeque.pop();
-            if (current.leftTreeNode==null&&current.rightTreeNode==null&&current.value==treeNodePathSum){
+            if (current.leftTreeNode == null && current.rightTreeNode == null && current.value == treeNodePathSum) {
                 return true;
             }
-            if (current.leftTreeNode!=null){
-                current.leftTreeNode.value= current.value+ current.leftTreeNode.value;
+            if (current.leftTreeNode != null) {
+                current.leftTreeNode.value = current.value + current.leftTreeNode.value;
                 temporaryTreeNodeDeque.push(current.leftTreeNode);
+
             }
-            if (current.rightTreeNode!=null){
-                current.rightTreeNode.value= current.value+ current.rightTreeNode.value;
+            if (current.rightTreeNode != null) {
+                current.rightTreeNode.value = current.value + current.rightTreeNode.value;
                 temporaryTreeNodeDeque.push(current.rightTreeNode);
             }
         }
         return false;
     }
-  public   Boolean mySelf_RecursiveHasTreePathTotalSum(TreeNode treeNodeRoot, int treeNodePathSum) {
+
+    public Boolean mySelf_RecursiveHasTreePathTotalSum(TreeNode treeNodeRoot, int treeNodePathSum) {
         if (treeNodeRoot == null) {
             return false;
         }
-        if (treeNodeRoot.leftTreeNode==null&&treeNodeRoot.rightTreeNode==null){
-            return treeNodePathSum==treeNodeRoot.value;
+        if (treeNodeRoot.leftTreeNode == null && treeNodeRoot.rightTreeNode == null) {
+            return treeNodePathSum == treeNodeRoot.value;
         }
-        return mySelf_RecursiveHasTreePathTotalSum(treeNodeRoot.leftTreeNode,treeNodePathSum- treeNodeRoot.value)
-                ||mySelf_RecursiveHasTreePathTotalSum(treeNodeRoot.rightTreeNode,treeNodePathSum-treeNodeRoot.value);
+        return mySelf_RecursiveHasTreePathTotalSum(treeNodeRoot.leftTreeNode, treeNodePathSum - treeNodeRoot.value)
+                || mySelf_RecursiveHasTreePathTotalSum(treeNodeRoot.rightTreeNode, treeNodePathSum - treeNodeRoot.value);
     }
 }

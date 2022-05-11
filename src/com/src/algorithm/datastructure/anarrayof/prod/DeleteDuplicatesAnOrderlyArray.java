@@ -8,9 +8,20 @@ package com.src.algorithm.datastructure.anarrayof.prod;
  */
 public class DeleteDuplicatesAnOrderlyArray {
 
-    public static void main(String[] args) {
-
+    public int mySelf_doublePoint(int[] needWeightRemovalArray) {
+        if (needWeightRemovalArray == null || needWeightRemovalArray.length < 2) {
+            return 0;
+        }
+        int fastPoint = 1;
+        int slowPoint = 0;
+        while (fastPoint < needWeightRemovalArray.length) {
+            if (needWeightRemovalArray[fastPoint] != needWeightRemovalArray[slowPoint]) {
+                needWeightRemovalArray[slowPoint + 1] = needWeightRemovalArray[fastPoint];
+                slowPoint++;
+            }
+            fastPoint++;
+        }
+        return slowPoint + 1;
     }
-
 
 }

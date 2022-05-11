@@ -42,7 +42,6 @@ public class ThreeNumberSum {
     public List<List<Integer>> Myself_DoublePointerThreeNumberSum(int[] specifiedFindArray) {
         Set<List<Integer>> arrayElementCollect = new HashSet<>();
         Arrays.sort(specifiedFindArray);
-        System.out.println(Arrays.toString(specifiedFindArray));
         for (int firstNumberArrayIndex = 0; firstNumberArrayIndex < specifiedFindArray.length-2; firstNumberArrayIndex++) {
             if (firstNumberArrayIndex > 0 && specifiedFindArray[firstNumberArrayIndex] == specifiedFindArray[firstNumberArrayIndex -1]) {
                 continue;

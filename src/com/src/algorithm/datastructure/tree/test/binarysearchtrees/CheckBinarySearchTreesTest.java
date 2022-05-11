@@ -14,10 +14,12 @@ class CheckBinarySearchTreesTest {
     CheckBinarySearchTrees.BinarySearchTreeNode treeNodeRoot;
     @BeforeEach
     void setUp() {
-        checkBinarySearchTrees =new CheckBinarySearchTrees();
-        treeNodeRoot =new CheckBinarySearchTrees.BinarySearchTreeNode(2);
-        treeNodeRoot.leftTreeNode=new CheckBinarySearchTrees.BinarySearchTreeNode(1);
-        treeNodeRoot.rightTreeNode=new CheckBinarySearchTrees.BinarySearchTreeNode(3);
+        checkBinarySearchTrees = new CheckBinarySearchTrees();
+        treeNodeRoot = new CheckBinarySearchTrees.BinarySearchTreeNode(5);
+        treeNodeRoot.leftTreeNode = new CheckBinarySearchTrees.BinarySearchTreeNode(1);
+        treeNodeRoot.leftTreeNode.rightTreeNode = new CheckBinarySearchTrees.BinarySearchTreeNode(3);
+        treeNodeRoot.rightTreeNode = new CheckBinarySearchTrees.BinarySearchTreeNode(6);
+        treeNodeRoot.rightTreeNode.rightTreeNode = new CheckBinarySearchTrees.BinarySearchTreeNode(7);
 
 
     }
