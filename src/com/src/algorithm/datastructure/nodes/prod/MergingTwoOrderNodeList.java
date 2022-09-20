@@ -1,10 +1,5 @@
 package com.src.algorithm.datastructure.nodes.prod;
 
-import java.awt.*;
-import java.io.File;
-import java.util.List;
-import java.util.Set;
-
 /**
  * 合并两个订单节点列表
  *
@@ -112,7 +107,7 @@ public class MergingTwoOrderNodeList {
             temporaryNode = temporaryNode.next;
         }
 
-        temporary.next = firstOneListNode == null ? secondListNode : firstOneListNode;
+        temporaryNode.next = firstOneListNode == null ? secondListNode : firstOneListNode;
         return temporary.next;
     }
 

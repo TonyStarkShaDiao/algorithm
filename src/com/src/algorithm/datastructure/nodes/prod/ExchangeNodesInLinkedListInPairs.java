@@ -1,7 +1,5 @@
 package com.src.algorithm.datastructure.nodes.prod;
 
-import java.util.List;
-
 /**
  * 成对交换链表中节点
  *
@@ -28,7 +26,7 @@ public class ExchangeNodesInLinkedListInPairs {
             if (obj == null) {
                 return false;
             }
-            if (obj instanceof SumTwoLinkedLists.ListNode) {
+            if (obj instanceof ListNode) {
                 ListNode node = (ListNode) obj;
                 ListNode tempListNode = new ListNode(value);
                 tempListNode.next = next;

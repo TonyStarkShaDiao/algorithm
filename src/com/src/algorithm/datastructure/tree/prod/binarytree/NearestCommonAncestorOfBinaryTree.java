@@ -27,43 +27,6 @@ public class NearestCommonAncestorOfBinaryTree {
             this.rightTreeNode = right;
         }
 
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) {
-                return true;
-            }
-            if (o == null || getClass() != o.getClass()) {
-                return false;
-            }
-            TreeNode leftTreeNode = (TreeNode) o;
-            TreeNode rightTreeNode = (TreeNode) o;
-            TreeNode thisLeftTreeNode = this;
-            TreeNode thisRightTreeNode = this;
-//            this.treeNodeToArray
-            while (leftTreeNode != null || thisLeftTreeNode != null) {
-                if (leftTreeNode == null && thisLeftTreeNode != null) {
-                    return false;
-                }
-                if (leftTreeNode != null && thisLeftTreeNode == null) {
-                    return false;
-                }
-                if (thisLeftTreeNode.value != leftTreeNode.value) {
-                    return false;
-                }
-                leftTreeNode = leftTreeNode.leftTreeNode;
-                thisLeftTreeNode = thisLeftTreeNode.leftTreeNode;
-
-            }
-            while (rightTreeNode != null && thisRightTreeNode != null) {
-                if (thisRightTreeNode.value != rightTreeNode.value) {
-                    return false;
-                }
-                rightTreeNode = rightTreeNode.rightTreeNode;
-                thisRightTreeNode = thisRightTreeNode.rightTreeNode;
-            }
-
-            return true;
-        }
     }
 
     public TreeNode mySelf_HashIterationNearestCommonAncestorOfBinaryTree(TreeNode root, TreeNode firstTreeNode, TreeNode secondTreeNode) {

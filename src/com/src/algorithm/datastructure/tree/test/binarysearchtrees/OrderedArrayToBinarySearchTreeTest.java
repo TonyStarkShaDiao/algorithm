@@ -1,12 +1,11 @@
 package com.src.algorithm.datastructure.tree.test.binarysearchtrees;
 
 import com.src.algorithm.datastructure.tree.prod.binarysearchtrees.OrderedArrayToBinarySearchTree;
-import com.sun.tools.corba.se.idl.constExpr.Or;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class OrderedArrayToBinarySearchTreeTest {
 
@@ -38,6 +37,13 @@ class OrderedArrayToBinarySearchTreeTest {
     @Test
     void middleOrderTraversalCheckBinarySearchTree() {
         Boolean checkBinarySearchTreeResult = orderedArrayToBinarySearchTree.middleOrderTraversalCheckBinarySearchTree(root);
+        assertTrue(checkBinarySearchTreeResult);
+    }
+
+    @Test
+    void mySelf_middleOrderTraversalBuildSearchTree() {
+        OrderedArrayToBinarySearchTree.BinarySearchTreeNode binarySearchTreeNode = orderedArrayToBinarySearchTree.mySelf_middleOrderTraversalBuildBinarySearchTree(orderArray);
+        Boolean checkBinarySearchTreeResult = orderedArrayToBinarySearchTree.middleOrderTraversalCheckBinarySearchTree(binarySearchTreeNode);
         assertTrue(checkBinarySearchTreeResult);
     }
 }

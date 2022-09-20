@@ -1,9 +1,5 @@
 package com.src.algorithm.datastructure.tree.prod.binarysearchtrees;
 
-import com.src.algorithm.datastructure.tree.prod.binarytree.ConstructingBinaryTreeByPreorderTraversalAndMiddleOrderTraversal;
-
-import java.util.Objects;
-
 /**
  * 删除二叉树搜索树节点
  *
@@ -30,44 +26,56 @@ public class DeleteNodeOfBinaryTreeSearchTree {
             this.rightTreeNode = right;
         }
 
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            BinarySearchTreeNode leftTreeNode = (BinarySearchTreeNode) o;
-            BinarySearchTreeNode rightTreeNode = (BinarySearchTreeNode) o;
-            BinarySearchTreeNode thisLeftTreeNode = this;
-            BinarySearchTreeNode thisRightTreeNode = this;
-//            this.treeNodeToArray
-            while (leftTreeNode != null || thisLeftTreeNode != null) {
-                if (leftTreeNode == null && thisLeftTreeNode != null) {
-                    return false;
-                }
-                if (leftTreeNode != null && thisLeftTreeNode == null) {
-                    return false;
-                }
-                if (thisLeftTreeNode.value != leftTreeNode.value) {
-                    return false;
-                }
-                leftTreeNode = leftTreeNode.leftTreeNode;
-                thisLeftTreeNode = thisLeftTreeNode.leftTreeNode;
 
-            }
-            while (rightTreeNode != null && thisRightTreeNode != null) {
-                if (thisRightTreeNode.value != rightTreeNode.value) {
-                    return false;
-                }
-                rightTreeNode = rightTreeNode.rightTreeNode;
-                thisRightTreeNode = thisRightTreeNode.rightTreeNode;
-            }
+    }
 
-            return true;
+    public BinarySearchTreeNode middleOrderTraversalDeleteNodeOfBinaryTreeSearchTree(BinarySearchTreeNode root, int key) {
+        if (root == null) {
+            return null;
         }
+        BinarySearchTreeNode currentTreeNodePoint = root;
+        BinarySearchTreeNode previousTreeNodePoint = null;
+        while (currentTreeNodePoint != null) {
 
-        @Override
-        public int hashCode() {
-            return Objects.hash(value, leftTreeNode, rightTreeNode);
+            if (currentTreeNodePoint.value == key) {
+                break;
+            }
+            previousTreeNodePoint = currentTreeNodePoint;
+            if (currentTreeNodePoint.value > key) {
+                currentTreeNodePoint = currentTreeNodePoint.leftTreeNode;
+            }
+            if (currentTreeNodePoint.value < key) {
+                currentTreeNodePoint = currentTreeNodePoint.rightTreeNode;
+            }
         }
+        if (previousTreeNodePoint == null) {
+            return this.deleteTreeNode(currentTreeNodePoint);
+        }
+        if (previousTreeNodePoint.leftTreeNode != null && previousTreeNodePoint.leftTreeNode.value == key) {
+            previousTreeNodePoint.leftTreeNode = this.deleteTreeNode(currentTreeNodePoint);
+
+        }
+        if (previousTreeNodePoint.rightTreeNode != null && previousTreeNodePoint.rightTreeNode.value == key) {
+            previousTreeNodePoint.rightTreeNode = this.deleteTreeNode(currentTreeNodePoint);
+        }
+        return root;
+
+    }
+
+
+    private BinarySearchTreeNode deleteTreeNode(BinarySearchTreeNode currentTreeNodePoint) {
+        if (currentTreeNodePoint == null) {
+            return null;
+        }
+        if (currentTreeNodePoint.rightTreeNode == null) {
+            return currentTreeNodePoint.leftTreeNode;
+        }
+        BinarySearchTreeNode currentRightTreeNodePoint = currentTreeNodePoint.rightTreeNode;
+        while (currentRightTreeNodePoint.leftTreeNode != null) {
+            currentRightTreeNodePoint = currentRightTreeNodePoint.leftTreeNode;
+        }
+        currentRightTreeNodePoint.leftTreeNode = currentTreeNodePoint.leftTreeNode;
+        return currentTreeNodePoint.rightTreeNode;
     }
 
     public BinarySearchTreeNode iterationDeleteNodeOfBinaryTreeSearchTree(BinarySearchTreeNode root, int delElement) {

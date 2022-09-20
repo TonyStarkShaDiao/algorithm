@@ -22,7 +22,7 @@ public class IntermediateNodeOfLinkedList {
             if (obj == null) {
                 return false;
             }
-            if (obj instanceof SumTwoLinkedLists.ListNode) {
+            if (obj instanceof ListNode) {
                 ListNode node = (ListNode) obj;
                 ListNode tempListNode = new ListNode(value);
                 tempListNode.next = next;

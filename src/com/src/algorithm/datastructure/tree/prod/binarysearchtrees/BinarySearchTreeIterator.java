@@ -32,6 +32,7 @@ public class BinarySearchTreeIterator {
         }
         this.root = root;
         stack = new Stack<BinarySearchTreeNode>();
+
     }
 
     public int next() {

@@ -1,13 +1,11 @@
 package com.src.algorithm.datastructure.nodes.test;
 
 import com.src.algorithm.datastructure.nodes.prod.RearrangeLinkedList;
-import com.sun.org.apache.regexp.internal.RE;
-import com.sun.xml.internal.bind.v2.TODO;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 //
 //
 class RearrangeLinkedListTest {

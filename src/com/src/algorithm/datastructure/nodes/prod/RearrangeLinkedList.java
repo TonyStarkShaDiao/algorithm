@@ -1,7 +1,5 @@
 package com.src.algorithm.datastructure.nodes.prod;
 
-import sun.nio.ch.sctp.SendFailed;
-
 /**
  * 重新排列链表
  *
@@ -28,7 +26,7 @@ public class RearrangeLinkedList {
             if (obj == null) {
                 return false;
             }
-            if (obj instanceof SumTwoLinkedLists.ListNode) {
+            if (obj instanceof ListNode) {
                 ListNode node = (ListNode) obj;
                 ListNode tempListNode = new ListNode(value);
                 tempListNode.next = next;

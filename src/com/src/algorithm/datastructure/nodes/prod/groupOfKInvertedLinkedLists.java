@@ -80,4 +80,53 @@ public class groupOfKInvertedLinkedLists {
         }
         return dummyListNode.next;
     }
+
+    public ListNode mySelf_groupingGroupOfKInvertedLinkedLists(ListNode header, int numberOfGroups) {
+        if (header == null || header.next == null) {
+            return header;
+        }
+        int listNodeLength = 0;
+        ListNode currentListNodePoint = header;
+        while (currentListNodePoint != null) {
+            listNodeLength++;
+            currentListNodePoint = currentListNodePoint.next;
+        }
+        int groupCount = listNodeLength / numberOfGroups;
+        ListNode resultListNode = header;
+        currentListNodePoint = header;
+        ListNode startListNodePoint;
+        ListNode endListNodePoint = null;
+        ListNode previousListNodePoint;
+        for (int i = 0; i < groupCount; i++) {
+
+            if (endListNodePoint == null) {
+                endListNodePoint = currentListNodePoint;
+            }
+            startListNodePoint = currentListNodePoint;
+            ;
+
+            previousListNodePoint = null;
+            int currentNumberCount = numberOfGroups;
+            while (currentNumberCount != 0) {
+                ListNode currentNextPoint = currentListNodePoint.next;
+                currentListNodePoint.next = previousListNodePoint;
+                previousListNodePoint = currentListNodePoint;
+                currentListNodePoint = currentNextPoint;
+                currentNumberCount--;
+            }
+            if (i == 0) {
+                resultListNode = previousListNodePoint;
+            }
+            if (i != 0) {
+                endListNodePoint.next = previousListNodePoint;
+                endListNodePoint = startListNodePoint;
+            }
+
+        }
+        if (currentListNodePoint != null) {
+            endListNodePoint.next = currentListNodePoint;
+        }
+        return resultListNode;
+    }
+
 }

@@ -21,50 +21,7 @@ public class BinaryTreeSawtoothLevelOrderTraversal {
             this.value = val;
         }
 
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.value = val;
-            this.leftTreeNode = left;
-            this.rightTreeNode = right;
-        }
 
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            TreeNode leftTreeNode = (TreeNode) o;
-            TreeNode rightTreeNode = (TreeNode) o;
-            TreeNode thisLeftTreeNode = this;
-            TreeNode thisRightTreeNode = this;
-//            this.treeNodeToArray
-            while (leftTreeNode != null || thisLeftTreeNode != null) {
-                if (leftTreeNode == null && thisLeftTreeNode != null) {
-                    return false;
-                }
-                if (leftTreeNode != null && thisLeftTreeNode == null) {
-                    return false;
-                }
-                if (thisLeftTreeNode.value != leftTreeNode.value) {
-                    return false;
-                }
-                leftTreeNode = leftTreeNode.leftTreeNode;
-                thisLeftTreeNode = thisLeftTreeNode.leftTreeNode;
-
-            }
-            while (rightTreeNode != null && thisRightTreeNode != null) {
-                if (thisRightTreeNode.value != rightTreeNode.value) {
-                    return false;
-                }
-                rightTreeNode = rightTreeNode.rightTreeNode;
-                thisRightTreeNode = thisRightTreeNode.rightTreeNode;
-            }
-
-            return true;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(value, leftTreeNode, rightTreeNode);
-        }
     }
 
     public List<List<Integer>> mySelf_BinaryTreeSawtoothLLLevelOrderTraversal(TreeNode root) {

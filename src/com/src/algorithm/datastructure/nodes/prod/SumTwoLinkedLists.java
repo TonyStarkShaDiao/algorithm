@@ -1,7 +1,5 @@
 package com.src.algorithm.datastructure.nodes.prod;
 
-import com.sun.org.apache.regexp.internal.RE;
-import sun.util.resources.cldr.my.CurrencyNames_my;
 
 /**
  * 两个链表之和
@@ -53,8 +51,11 @@ public class SumTwoLinkedLists {
         }
     }
 
+
     public ListNode mySelf_SumTwoLinkedLists(ListNode firstListHeaderNode, ListNode secondHeaderListNode) {
         int carry = 0;
+
+
         ListNode resultHeaderNode = new ListNode(0);
         ListNode nextNode = resultHeaderNode;
         while (firstListHeaderNode != null || secondHeaderListNode != null) {

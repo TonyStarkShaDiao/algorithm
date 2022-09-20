@@ -5,6 +5,7 @@ package com.src.algorithm.datastructure.anarrayof.prod;
  *
  * @author Tony Stark (沙雕) 13860120508
  * @date 2022/05/12
+ *
  */
 public class SearchInsertionLocation {
     public int binarySearchSearchInsertionLocation(int[] nums, int target) {

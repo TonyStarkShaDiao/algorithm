@@ -5,7 +5,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MergingTwoOrderNodeListTest {
 
@@ -19,11 +19,11 @@ class MergingTwoOrderNodeListTest {
         mergingTwoOrderNodeList = new MergingTwoOrderNodeList();
         firstOneHeaderList = new MergingTwoOrderNodeList.ListNode(1);
         firstOneHeaderList.next = new MergingTwoOrderNodeList.ListNode(2);
-        firstOneHeaderList.next.next = new MergingTwoOrderNodeList.ListNode(3);
-        secondOneHeaderList = new MergingTwoOrderNodeList.ListNode(4);
-        secondOneHeaderList.next = new MergingTwoOrderNodeList.ListNode(6);
-        secondOneHeaderList.next.next = new MergingTwoOrderNodeList.ListNode(7);
-        secondOneHeaderList.next.next = new MergingTwoOrderNodeList.ListNode(8);
+        firstOneHeaderList.next.next = new MergingTwoOrderNodeList.ListNode(4);
+        secondOneHeaderList = new MergingTwoOrderNodeList.ListNode(1);
+        secondOneHeaderList.next = new MergingTwoOrderNodeList.ListNode(3);
+        secondOneHeaderList.next.next = new MergingTwoOrderNodeList.ListNode(4);
+        secondOneHeaderList.next.next.next = new MergingTwoOrderNodeList.ListNode(6);
         expectHeaderList = new MergingTwoOrderNodeList.ListNode(1);
         expectHeaderList.next = new MergingTwoOrderNodeList.ListNode(2);
         expectHeaderList.next.next = new MergingTwoOrderNodeList.ListNode(3);

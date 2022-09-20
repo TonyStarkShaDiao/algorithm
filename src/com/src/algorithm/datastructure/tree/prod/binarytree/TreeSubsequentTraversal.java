@@ -141,16 +141,16 @@ public class TreeSubsequentTraversal {
         while (!temporaryTreeNodeStack.isEmpty() || rootNode != null) {
             while (rootNode != null) {
                 temporaryTreeNodeStack.push(rootNode);
-                rootNode=rootNode.leftTreeNode;
+                rootNode = rootNode.leftTreeNode;
             }
             TreeNode currentTreeNode = temporaryTreeNodeStack.pop();
-            if (currentTreeNode.rightTreeNode==null||currentTreeNode.rightTreeNode==usedTreeNode){
+            if (currentTreeNode.rightTreeNode == null || currentTreeNode.rightTreeNode == usedTreeNode) {
                 treeNodeElementCollect.add(currentTreeNode.value);
-                usedTreeNode=currentTreeNode;
-                rootNode=null;
-            }else {
+                usedTreeNode = currentTreeNode;
+                rootNode = null;
+            } else {
                 temporaryTreeNodeStack.push(currentTreeNode);
-                rootNode=currentTreeNode.rightTreeNode;
+                rootNode = currentTreeNode.rightTreeNode;
             }
         }
         return treeNodeElementCollect;

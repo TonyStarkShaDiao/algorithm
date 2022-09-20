@@ -1,9 +1,7 @@
 package com.src.algorithm.datastructure.nodes.prod;
 
-import java.util.List;
-
 /**
- * 交叉链表
+ * 相交链表
  *
  * @author Tony Stark (沙雕) 13860120508
  * @date 2022/04/22
