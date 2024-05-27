@@ -22,5 +22,9 @@ public class BinarySearch {
             return -1;
         }
         return OrderlyArray[headerPoint] == target ? headerPoint : -1;
+
     }
+    //
+
+
 }
